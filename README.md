@@ -13,6 +13,7 @@
 
 ## Features
 
+ - [x] Only requires a **low privileges domain user account**.
  - [x] Automatically gets the list of all users/computers/DCs from the domain controller's LDAP.
  - [x] Multithreaded command execution.
  - [x] Saves the output of the commands to a file.
