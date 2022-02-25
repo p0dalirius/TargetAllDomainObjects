@@ -3,6 +3,7 @@
 <p align="center">
   A python wrapper to run a command on against all users/computers/DCs of a Windows Domain
   <br>
+  <img src="https://badges.pufler.dev/visits/p0dalirius/TargetAllDomainObjects/"/>
   <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/p0dalirius/TargetAllDomainObjects">
   <a href="https://twitter.com/intent/follow?screen_name=podalirius_" title="Follow"><img src="https://img.shields.io/twitter/follow/podalirius_?label=Podalirius&style=social"></a>
   <br>
