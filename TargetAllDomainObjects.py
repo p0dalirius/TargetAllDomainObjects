@@ -23,8 +23,8 @@ import jinja2
 def get_domain_computers(ldap_server, ldap_session, debug=False):
     results = []
     target_dn = ldap_server.info.other["defaultNamingContext"]
-    ldap_session.search(target_dn, "(objectCategory=computer)", attributes=["dNSHostName","sAMAccountName"])
-    for entry in ldap_session.response:
+    results = list(ldap_session.extend.standard.paged_search(target_dn, "(objectCategory=computer)", attributes=["dNSHostName", "sAMAccountName"]))
+    for entry in results:
         if entry['type'] != 'searchResEntry':
             continue
         fqdn = entry["attributes"]['dNSHostName']
@@ -39,8 +39,8 @@ def get_domain_computers(ldap_server, ldap_session, debug=False):
 def get_domain_users(ldap_server, ldap_session, debug=False):
     results = []
     target_dn = ldap_server.info.other["defaultNamingContext"]
-    ldap_session.search(target_dn, "(objectCategory=user)", attributes=["sAMAccountName"])
-    for entry in ldap_session.response:
+    results = list(ldap_session.extend.standard.paged_search(target_dn, "(objectCategory=user)", attributes=["sAMAccountName"]))
+    for entry in results:
         if entry['type'] != 'searchResEntry':
             continue
         results.append(entry["attributes"]['sAMAccountName'])
